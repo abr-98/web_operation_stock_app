@@ -1,0 +1,131 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	color: #333333;
+	margin: 0px;
+	padding: 0px;
+}
+#container {
+	padding: 0px;
+	width: 980px;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+#container #header {
+	color: #FFFFFF;
+	background-color: #009F00;
+	margin: 0px;
+	padding: 5px;
+	clear: both;
+	height: 20px;
+}
+#container #contentarea {
+	background-image: url(images/background.gif);
+	background-repeat: repeat-y;
+}
+#container #leftcolumn {
+	margin: 0px;
+	padding: 10px;
+	float: left;
+	width: 150px;
+}
+#container #contents {
+	margin: 0px;
+	padding: 10px;
+	float: left;
+	width: 787px;
+}
+#container #leftcolumn ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-image: none;
+	list-style-type: none;
+}
+#container #leftcolumn li {
+	margin: 0px;
+	padding: 5px 0px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #C4ECFF;
+}
+#container #leftcolumn a {
+	color: #005B88;
+	text-decoration: none;
+}
+#container #leftcolumn a:hover {
+	color: #FFCC00;
+}
+#container #contents h1 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #333333;
+	padding: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+}
+#container #footer {
+	color: #006699;
+	background-color: #BFBFBF;
+	text-align: center;
+	margin: 0px;
+	padding: 5px;
+	clear: both;
+}
+a {
+	color: #004D71;
+}
+a:hover {
+	color: #FFCC00;
+}
+p {
+	padding: 0px;
+	margin-top: 10px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+#ctxmenu {
+	margin-bottom: 10px;
+	background-color: #E9E9E9;
+	padding: 3px;
+}
+#ctxmenu a {
+	text-decoration: none;
+}
+.grid th {
+	text-align: left;
+	vertical-align: top;
+	border-bottom: 3px solid #006699;
+	color: #333333;
+}
+.grid td {
+	border-bottom: 1px dashed #D7F2FF;
+	vertical-align: top;
+	padding: 3px 2px;
+}
+.formtable {
+	vertical-align: top;
+	padding: 3px 2px;
+	border: 1px dashed #D9F2FF;
+}
+.formtable th {
+	font-size: 11px;
+	font-weight: bold;
+	text-align: left;
+	vertical-align: top;
+}
+.error {
+	color: #FF0000;
+}
+.inputtext {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	border: 1px solid #9EBCED;
+}
