@@ -1,0 +1,3 @@
+# web_operation_stock_app
+
+IT IS A FRONT END AND BACK END OPERATION USING MYSQL,JS,PHP,CSS
