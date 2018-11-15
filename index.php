@@ -34,6 +34,6 @@ include('includes/functions.php');
 </form>
 <p align="center" class="style1">&nbsp;</p>
 <p align="center"><a href="http://localhost/stock_app_web/admin-signup.html">New?Sign up?</a></p>
-
+<p align="center"><a href="http://localhost/stock_app_web/forgot-password.html">Forgot Password?</a></p>
 </body>
 </html>

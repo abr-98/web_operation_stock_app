@@ -1,0 +1,73 @@
+<?php 
+require_once('includes/functions.php');
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+<title>Forgot Password</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="stock_web.css" rel="stylesheet" type="text/css">
+<style>
+
+
+#Forgot_password{
+
+background-attachment:fixed;
+background-position:center;
+margin-top:200px;
+margin-bottom:150px;
+margin-right:150px;
+margin-left:400px;
+width:400px;
+padding:25px 25px; 
+}
+#button{
+border-radius:10px;
+width:100px;
+height:40px;
+
+font-weight:bold;
+font-size:20px;
+cursor: pointer;
+    width: 100%;
+    opacity: 1;
+}
+
+#button:hover {
+    opacity:0.6;
+}
+</style>
+
+<script type='text/javascript'>alert("OTP degenerates in 2 minutes of sending please try resend OTP");</script>
+</head>
+
+<div id="Forgot_password">
+<p style="align:center; margin-left: 40px" >OTP SENT TO THE REGISTERED PHONE NUMBER</p>      
+
+<fieldset style="width:400px; align:center"><legend>OTP_Verification Form</legend>
+<form method="post" action="OTP_Verification-exec.php">
+<table border="0">
+        <tr>
+
+                <td>User_name <span class="error">*</span>
+                  <br></td><td> <input type="text" class="inputtext" name="usr_name" id="usr_name" required></td>
+                </tr>
+                
+    <tr>
+
+<td>OTP <span class="error">*</span>
+  <br></td><td> <input type="text" class="inputtext" name="OTP" id="OTP" required></td>
+</tr>
+
+<tr>
+<td><input id="button" type="submit" name="Submit" value="Verify"></td>
+</tr>
+</form>
+</table>
+</fieldset>
+<p style="align:center; margin-left: 40px; font-weight: bold" >OTP IS YOUR NEW PASSWORD.PLEASE PROCEED AND CHANGE IT FROM PANEL</p>
+<p style="align:center; margin-left: 320px" ><a href= "send_otp.php">Resend OTP</a></p>
+</div>
