@@ -1,5 +1,6 @@
 <?php 
 require_once('includes/functions.php');
+$load_time=time();
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -8,31 +9,37 @@ require_once('includes/functions.php');
 <title>Admin signup</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link href="stock_app_web.css" rel="stylesheet" type="text/css">
+
 <style>
-
+body{
+    background-image:url("banner.jpg");
+    opacity: 1;
+}
 #Admin-signup{
-
+background-color: aliceblue;
 background-position:center;
-margin-top:50px;
+margin-top:130px;
 margin-bottom:150px;
-line-height:2.5em;
-margin-right:100px;
-margin-left:350px;
+line-height: 2.5 em;
+padding-right: 52px;
+
+margin-left:450px;
 width:380px;
-padding:40px 80px; 
+
 }
 #button{
 border-radius:10px;
-float:right;
+
 width:200px;
 height:40px;
 font-size:20px;
+color:darkmagenta;
+font-weight: bold;
+background-color: steelblue;
 cursor: pointer;
     width: 100%;
     opacity: 1;
 }
-
 #button:hover {
     opacity:0.6;
 }
@@ -41,15 +48,24 @@ cursor: pointer;
 
 <body>
 
-<body id="body-color">
-<p>&nbsp;</p>
-      
+ <p style="color:white;font-size: 35px; display: inline; margin-left: 9px;">STOCK APP SOLUTIONS</p>
+ <img src="stock_app.png" alt="logo" style="width:50px; height:50px;display: inline; float: left;">
+ 
 <div id="Admin-signup">
-
-<fieldset style="width:400px;align:center" ><legend>admin signup form</legend>
+<fieldset style="width:400px;align:center" >
 <form method="post" action="admin-signup-exec.php">
 <table border="0">
 <tr>
+<img src="image_icon.png" alt="image icon" style="width: 150px;height:150px; margin-left: 120px;margin-top:20px; margin-bottom:-20px;cursor: pointer" >
+<br><br><br>
+<select name="admin-image" style="margin-left:125px">
+        <option value="">Select</option>
+        <optgroup label="Upload image">
+        <option value="camera">Capture Image</option>
+        <option value="file">Upload From Files</option>
+    </optgroup>
+        
+    </select>
 <td>User_ID<span class="error">*</span></td>
  <br><td> <input name="usr_name" type="text" class="inputtext" id="usr_name" size="27" required></td>
 </tr>
@@ -58,6 +74,20 @@ cursor: pointer;
   <br><td> <input name="passwd" type="password" class="inputtext" id="passwd" size="27" required></td>
 </tr>
 <tr>
+    <td>Phone<span class="error">*</span></td>
+      <br><td> <input name="phn_no" type="number" class="inputtext" id="phn_no" size="27" required></td>
+    </tr>
+<tr>
+<tr>
+<td>Email<span class="error">*</span></td>
+<br><td> <input name="email" type="email" class="inputtext" id="email" size="27" required></td>
+</tr>
+<tr>
+    <td>(Security Check)4x3=<span class="error">*</span></td>
+    <br><td> <input name="spam_check" type="number" class="inputtext" id="spam_check" size="27" required></td>
+    </tr>
+    <td> <input name="l_time" value="$load_time" type="hidden" id="l_time"></td>
+            <tr>
              <td>&nbsp;</td>
              <td><span class="error">*</span> <span class="style3">Fields required to be filled</span></td>
            </tr>
@@ -69,5 +99,7 @@ cursor: pointer;
 </form>
 </fieldset>
 </div>
+</div>
 </body>
+
 </html>

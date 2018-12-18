@@ -27,6 +27,10 @@ include('includes/functions.php');
       <td><input name="passwd" type="password" class="inputtext" id="passwd2"></td>
     </tr>
     <tr>
+      <th>(Spam Check) 4x5=</th>
+      <td><input name="spam_check" type="number" class="inputtext" id="spam_check"></td>
+    </tr>
+    <tr>
       <th>&nbsp;</th>
       <td><input name="Submit" type="submit" class="inputtext" value="Submit"></td>
     </tr>

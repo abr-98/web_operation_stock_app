@@ -1,0 +1,106 @@
+<?php 
+require_once('includes/functions.php');
+?>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Admin signup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="stock_app_web.css" rel="stylesheet" type="text/css">
+<link href="captcha.css" rel="stylesheet" type="text/css">
+<script>
+function captchaCode()
+{
+    var Numb1,Numb2,Numb3,Numb4,Code;
+    Numb1=(Math.ceil(Math.random()*10)-1).toString();
+    Numb2=(Math.ceil(Math.random()*10)-1).toString();
+    Numb3=(Math.ceil(Math.random()*10)-1).toString();
+    Numb4=(Math.ceil(Math.random()*10)-1).toString();
+    Code=Numb1+Numb2+Numb3+Numb4;
+    $("#captcha span").remove();
+    $("#captcha input").remove();
+    $("#captcha").append("<span id='Code'>"+ Code +"</span><input type='button' onclick='captchaCode();'>");
+}
+</script>
+<style>
+
+#Admin-signup{
+
+background-position:center;
+margin-top:50px;
+margin-bottom:150px;
+line-height:2.5em;
+margin-right:100px;
+margin-left:350px;
+width:380px;
+padding:40px 80px; 
+}
+#button{
+border-radius:10px;
+float:right;
+width:150px;
+height:30px;
+font-size:20px;
+margin-bottom:20px;
+margin-left: 10px;
+
+
+cursor: pointer;
+    width: 100%;
+    opacity: 1;
+}
+
+#button:hover {
+    opacity:0.6;
+}
+</style>
+</head>
+
+<body>
+
+
+      
+<div id="Admin-signup">
+
+<fieldset style="width:400px;align:center" ><legend>admin signup form</legend>
+<form method="post" action="admin-signup-exec.php">
+<table border="0">
+<tr>
+<td>User_ID<span class="error">*</span></td>
+ <br><td> <input name="usr_name" type="text" class="inputtext" id="usr_name" size="27" required></td>
+</tr>
+<tr>
+<td>Password<span class="error">*</span></td>
+  <br><td> <input name="passwd" type="password" class="inputtext" id="passwd" size="27" required></td>
+</tr>
+<tr>
+    <td>Phone<span class="error">*</span></td>
+      <br><td> <input name="phn_no" type="number" class="inputtext" id="phn_no" size="27" required></td>
+    </tr>
+<tr>
+<td>Email<span class="error">*</span></td>
+<br><td> <input name="email" type="email" class="inputtext" id="email" size="27" required></td>
+</tr>
+<tr>
+<td><span id="captcha"></span><span class="error">*</span></td>
+<br><td> <input name="captcha" type="text" class="captcha" maxlength="4" size="20" id="captcha" placeholder="Enter captcha code" required></td>
+</tr>
+
+
+
+            <tr>
+             <td>&nbsp;</td>
+             <td><span class="error">*</span> <span class="style3">Fields required to be filled</span></td>
+           </tr>
+           
+<tr>
+<td><input id="button" type="submit" name="Submit" class="inputtext" value="Sign-Up"></td>
+</tr>
+</table>
+</form>
+</fieldset>
+</div>
+</body>
+</html>

@@ -5,41 +5,15 @@ $load_time=time();
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 
-<html>
-<head>
-<title>Forgot Password</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link href="stock_web.css" rel="stylesheet" type="text/css">
-<script>
-document.getElementById('timer').innerHTML =
-  03 + ":" + 00;
-startTimer();
 
-function startTimer() {
-  var presentTime = document.getElementById('timer').innerHTML;
-  var timeArray = presentTime.split(/[:]+/);
-  var m = timeArray[0];
-  var s = checkSecond((timeArray[1] - 1));
-  if(s==59){m=m-1}
-  if(m<0){alert('timer completed')}
-  
-  document.getElementById('timer').innerHTML =
-    m + ":" + s;
-  setTimeout(startTimer, 1000);
-}
-
-function checkSecond(sec) {
-  if (sec < 10 && sec >= 0) {sec = "0" + sec}; // add zero in front of numbers < 10
-  if (sec < 0) {sec = "59"};
-  return sec;
-}
-</script>
 <style>
-
+body{
+    background-image:url("banner.jpg");
+    opacity: 1;
+}
 
 #Forgot_password{
-
+background-color: aliceblue;
 background-attachment:fixed;
 background-position:center;
 margin-top:200px;
@@ -47,13 +21,15 @@ margin-bottom:150px;
 margin-right:150px;
 margin-left:400px;
 width:400px;
-padding:25px 25px; 
+ 
 }
 #button{
 border-radius:10px;
 width:100px;
 height:40px;
-
+color:darkmagenta;
+font-weight: bold;
+background-color: steelblue;
 font-weight:bold;
 font-size:20px;
 cursor: pointer;
@@ -65,14 +41,24 @@ cursor: pointer;
     opacity:0.6;
 }
 </style>
+<html>
+<head>
+<title>Forgot Password</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link href="stock_web.css" rel="stylesheet" type="text/css">
+
+
 
 <script type='text/javascript'>alert("OTP degenerates in 2 minute of sending please try resend OTP");</script>
 </head>
-
+<body>
+<p style="color:white;font-size: 35px; display: inline; margin-left: 9px;">STOCK APP SOLUTIONS</p>
+ <img src="stock_app.png" alt="logo" style="width:50px; height:50px;display: inline; float: left;">
 <div id="Forgot_password">
 <p style="align:center; margin-left: 40px" >OTP SENT TO THE REGISTERED EMAIL</p>      
 
-<fieldset style="width:400px; align:center"><legend>OTP_Verification Form</legend>
+<fieldset style="width:400px; align:center">
 <form method="post" action="OTP-verification.php">
 <table border="0">
         <tr>
@@ -93,6 +79,14 @@ cursor: pointer;
 </form>
 </table>
 </fieldset>
+<p style="align:center; margin-left: 40px; font-weight: bold" >OTP IS YOUR NEW PASSWORD.PLEASE PROCEED AND CHANGE IT FROM PANEL</p>
+
+<p style="align:center; margin-left: 320px" ><a href= "send_otp.php">Resend OTP</a></p>
+<p style="align:center; margin-left: 80px">"Time=3 min" </span></div>
+</p>
+</div>
+</body>
+</html>
 <?php 
 if(!$_POST['Submit'])
 {
@@ -100,19 +94,13 @@ while(1)
 {
     if(!$_POST['Submit'])
     {
-        load_time_2=time();
+        $load_time_2=time();
         if(load_time_2-load_time==120)
         {
             $message = "Your OTP has expired please request a resend to proceed";
-        echo "<script type='text/javascript'>alert('$message');
+        echo "<script type='text/javascript'>alert('$message')";
         }
     }
 }
 }
 ?>        
-<p style="align:center; margin-left: 40px; font-weight: bold" >OTP IS YOUR NEW PASSWORD.PLEASE PROCEED AND CHANGE IT FROM PANEL</p>
-
-<p style="align:center; margin-left: 320px" ><a href= "send_otp.php">Resend OTP</a></p>
-<p style="align:center; margin-left: 80px" > <div>Time=3 min <span id="timer"></span></div>
-</p>
-</div>

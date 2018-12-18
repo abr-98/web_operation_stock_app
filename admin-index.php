@@ -1,5 +1,14 @@
 <?php 
 require_once('startup.php');
+require_once('includes/dbconn.php');
+$user=$_SESSION['ADMIN_LOGIN'];
+$rs = mysqli_query($conn,"select usr_img from gr_admin WHERE admin_login='$user'");
+#echo($user);
+$row =mysqli_fetch_row($rs);
+$res=$row[0];
+#echo ($res);
+$img="client_images/".$res;
+#echo($img);
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,7 +26,11 @@ require_once('startup.php');
  <div id="contentarea"> 
  <div id="leftcolumn"><?php include('includes/link.php');?></div>  
   <div id="contents">
-  <h1> Welcome:- <?php echo $_SESSION['ADMIN_LOGIN'];?></h1>
+  <p><a href="update_user.php" style="display:inline;margin-right:30px;float:right;font-size:13px">Update Account Details</a></p>
+  <img src=<?php echo($img);?> style="height:30px;width:30px;display:inline;margin-right:10px;float:right">
+  
+  <h1 style="display:inline;margin-top:-8px"> Welcome:- <?php echo $_SESSION['ADMIN_LOGIN'];?></h1>
+
             
     </div>
 	<div style="clear:both "></div>
